@@ -13,10 +13,10 @@ namespace TimeZoner
     {
 
         [OperationContract]
-        string GetCountryTime(string country);
+        int GetCountryTime(string country);
 
         [OperationContract]
-        string GetISOTime(string countryISO);
+        int GetISOTime(string countryISO);
         
     }
 }

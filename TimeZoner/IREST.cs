@@ -13,10 +13,10 @@ namespace TimeZoner
     {
         [OperationContract]
         [WebGet(UriTemplate = "/getCountryTime/{country}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        string GetCountryTime(string country);
+        int GetCountryTime(string country);
 
         [OperationContract]
         [WebGet(UriTemplate = "/getISOTime/{countryISO}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        string GetISOTime(string countryISO);
+        int GetISOTime(string countryISO);
     }
 }
