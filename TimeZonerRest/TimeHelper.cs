@@ -1,39 +1,22 @@
-﻿using System;
+﻿using CsvHelper;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 using System.IO;
+using System.Linq;
 using System.Reflection;
-using CsvHelper;
-using System.Net;
+using System.Threading.Tasks;
 
-namespace TimeZoner
+namespace TimeZonerRest
 {
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
-    public class TimeZoner : ISOAP
+    public static class TimeHelper
     {
-        public int GetCountryTime(string country)
+        public static int GetCountryTimeUTC(string country, bool iso, string basePath)
         {
-            return GetCountryTimeUTC(country, false);
-        }
-
-        public int GetISOTime(string countryISO)
-        {
-            return GetCountryTimeUTC(countryISO, true);
-        }
-
-        private int GetCountryTimeUTC(string country, bool iso)
-        {
-            var assembly = Assembly.GetExecutingAssembly();
-            // Get path to the csv file
-            var resourceName = assembly.GetManifestResourceNames().Single(name => name.EndsWith("time-zones.csv"));
             string UTCtime = "";
             bool found = false;
-
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            
+            FileStream file = new FileStream(basePath + @"\data\time-zones.csv", FileMode.Open);
+            using (Stream stream = file)
             {
                 using (StreamReader reader = new StreamReader(stream))
                 {
@@ -44,7 +27,7 @@ namespace TimeZoner
 
                         foreach (UTCZone zone in records)
                         {
-                            // Check if the passed country name exists in our records
+                            // Check if the passed ISO exists in our records
                             if (iso)
                             {
                                 if (zone.CountryCode == country.ToUpper())
@@ -67,7 +50,7 @@ namespace TimeZoner
                         }
 
                         if (found == false)
-                            throw new FaultException<ErrorData>(new ErrorData() { ErrorMessage = "Country Not Found!" });
+                            throw new Exception();
                     }
                 }
             }

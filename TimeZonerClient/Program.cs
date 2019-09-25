@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net;
+using System.ServiceModel;
 using System.Xml;
 using TimeZoner;
 
@@ -11,7 +12,10 @@ namespace TimeZonerClient
         static void Main(string[] args)
         {
             Program timeZoner = new Program();
+
+            // Helper method to get GMT Universal time from an external web service
             double currentTime = timeZoner.GetGMTTime();
+
             string input = Console.ReadLine();
             bool countryCode = input.Length == 2;
             
@@ -27,15 +31,20 @@ namespace TimeZonerClient
             SOAPClient proxy = new SOAPClient();
             string countryTime;
 
-            if (countryCode)
-                countryTime = await proxy.GetISOTimeAsync(country);
-            else
-                countryTime = await proxy.GetCountryTimeAsync(country);
+            try
+            {
+                if (countryCode)
+                    countryTime = await proxy.GetISOTimeAsync(country);
+                else
+                    countryTime = await proxy.GetCountryTimeAsync(country);
 
-            if (int.Parse(countryTime) == -99)
-                Console.WriteLine("Country not found!");
-            else
                 Console.WriteLine("Country time SOAP: " + UnixTimeStampToDateTime(currentTime + Double.Parse(countryTime)));
+            }
+            catch (FaultException e)
+            {
+                Console.WriteLine("SOAP: Country not found!");
+            }
+            
         }
 
         public void RunRest(double currentTime, bool countryCode, string country)
@@ -43,22 +52,26 @@ namespace TimeZonerClient
             HttpWebRequest request;
 
             if (countryCode)
-                request = (HttpWebRequest)WebRequest.Create("http://localhost:49851/TimeZoner.svc/rest/getISOTime/" + country);
+                request = (HttpWebRequest)WebRequest.Create("https://localhost:44313/api/TimeZone/GetCountryISO/" + country);
             else
-                request = (HttpWebRequest)WebRequest.Create("http://localhost:49851/TimeZoner.svc/rest/getCountryTime/" + country);
+                request = (HttpWebRequest)WebRequest.Create("https://localhost:44313/api/TimeZone/GetCountryTime/" + country);
 
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            try
+            {
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-            Stream responseStream = response.GetResponseStream();
-            StreamReader streamReader = new StreamReader(responseStream, System.Text.Encoding.GetEncoding("utf-8"));
-            string json = streamReader.ReadToEnd();
+                Stream responseStream = response.GetResponseStream();
+                StreamReader streamReader = new StreamReader(responseStream, System.Text.Encoding.GetEncoding("utf-8"));
+                string jsonResponse = streamReader.ReadToEnd();
 
-            streamReader.Close();
+                streamReader.Close();
 
-            if (int.Parse(json) == -99)
-                Console.WriteLine("Country not found!");
-            else
-                Console.WriteLine("Country time REST: " + UnixTimeStampToDateTime(currentTime + Double.Parse(json)));
+                Console.WriteLine("Country time REST: " + UnixTimeStampToDateTime(currentTime + Double.Parse(jsonResponse)));
+            }
+            catch (WebException e)
+            {
+                Console.WriteLine("REST: Country not found!");
+            }
         }
 
         private double GetGMTTime()
@@ -81,12 +94,12 @@ namespace TimeZonerClient
             return Double.Parse(timestamp[0].InnerText);
         }
 
-        private static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
+        private static string UnixTimeStampToDateTime(double unixTimeStamp)
         {
             // Unix timestamp is seconds past epoch
             DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
             dtDateTime = dtDateTime.AddSeconds(unixTimeStamp);
-            return dtDateTime;
+            return dtDateTime.ToLongTimeString();
         }
         
     }

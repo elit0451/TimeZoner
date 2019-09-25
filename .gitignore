@@ -259,3 +259,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/TimeZonerRest/appsettings.json
+/TimeZonerRest/appsettings.Development.json
+/TimeZonerRest/Properties/launchSettings.json

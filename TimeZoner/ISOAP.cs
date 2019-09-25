@@ -13,10 +13,23 @@ namespace TimeZoner
     {
 
         [OperationContract]
+        [FaultContract(typeof(ErrorData))]
         int GetCountryTime(string country);
 
         [OperationContract]
+        [FaultContract(typeof(ErrorData))]
         int GetISOTime(string countryISO);
         
+    }
+
+    [DataContract]
+    public class ErrorData
+    {
+        [DataMember]
+        public bool Result { get; set; }
+        [DataMember]
+        public string ErrorMessage { get; set; }
+        [DataMember]
+        public string ErrorDetails { get; set; }
     }
 }

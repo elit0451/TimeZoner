@@ -1,0 +1,279 @@
+CountryCode;CountryName;GMTOffset
+AD;Andorra;UTC +02:00
+AE;United Arab Emirates;UTC +04:00
+AF;Afghanistan;UTC +04:30
+AG;Antigua and Barbuda;UTC -04:00
+AI;Anguilla;UTC -04:00
+AL;Albania;UTC +02:00
+AM;Armenia;UTC +04:00
+AO;Angola;UTC +01:00
+AQ;Antarctica;UTC -03:00
+AR;Argentina;UTC -03:00
+AS;American Samoa;UTC -11:00
+AT;Austria;UTC +02:00
+AU;Australia;UTC +08:00
+AW;Aruba;UTC -04:00
+AX;Aland Islands;UTC +03:00
+AZ;Azerbaijan;UTC +04:00
+BA;Bosnia and Herzegovina;UTC +02:00
+BB;Barbados;UTC -04:00
+BD;Bangladesh;UTC +06:00
+BE;Belgium;UTC +02:00
+BF;Burkina Faso;UTC
+BG;Bulgaria;UTC +03:00
+BH;Bahrain;UTC +03:00
+BI;Burundi;UTC +02:00
+BJ;Benin;UTC +01:00
+BL;Saint Barthélemy;UTC -04:00
+BM;Bermuda;UTC -03:00
+BN;Brunei;UTC +08:00
+BO;Bolivia;UTC -04:00
+BQ;Bonaire, Saint Eustatius and Saba;UTC -04:00
+BR;Brazil;UTC -02:00
+BS;Bahamas;UTC -04:00
+BT;Bhutan;UTC +06:00
+BW;Botswana;UTC +02:00
+BY;Belarus;UTC +03:00
+BZ;Belize;UTC -06:00
+CA;Canada;UTC -02:30
+CC;Cocos Islands;UTC +06:30
+CD;Democratic Republic of the Congo;UTC +01:00
+CF;Central African Republic;UTC +01:00
+CG;Republic of the Congo;UTC +01:00
+CH;Switzerland;UTC +02:00
+CI;Ivory Coast;UTC
+CK;Cook Islands;UTC -10:00
+CL;Chile;UTC -03:00
+CM;Cameroon;UTC +01:00
+CN;China;UTC +06:00
+CO;Colombia;UTC -05:00
+CR;Costa Rica;UTC -06:00
+CU;Cuba;UTC -04:00
+CV;Cape Verde;UTC -01:00
+CW;Curaçao;UTC -04:00
+CX;Christmas Island;UTC +07:00
+CY;Cyprus;UTC +03:00
+CZ;Czech Republic;UTC +02:00
+DE;Germany;UTC +02:00
+DJ;Djibouti;UTC +03:00
+DK;Denmark;UTC +02:00
+DM;Dominica;UTC -04:00
+DO;Dominican Republic;UTC -04:00
+DZ;Algeria;UTC +01:00
+EC;Ecuador;UTC -05:00
+EE;Estonia;UTC +03:00
+EG;Egypt;UTC +02:00
+EH;Western Sahara;UTC +01:00
+ER;Eritrea;UTC +03:00
+ES;Spain;UTC +01:00
+ET;Ethiopia;UTC +03:00
+FI;Finland;UTC +03:00
+FJ;Fiji;UTC +12:00
+FK;Falkland Islands;UTC -03:00
+FM;Micronesia;UTC +10:00
+FO;Faroe Islands;UTC +01:00
+FR;France;UTC +02:00
+GA;Gabon;UTC +01:00
+GB;United Kingdom;UTC +01:00
+GD;Grenada;UTC -04:00
+GE;Georgia;UTC +04:00
+GF;French Guiana;UTC -03:00
+GG;Guernsey;UTC +01:00
+GH;Ghana;UTC
+GI;Gibraltar;UTC +02:00
+GL;Greenland;UTC
+GM;Gambia;UTC
+GN;Guinea;UTC
+GP;Guadeloupe;UTC -04:00
+GQ;Equatorial Guinea;UTC +01:00
+GR;Greece;UTC +03:00
+GS;South Georgia and the South Sandwich Islands;UTC -02:00
+GT;Guatemala;UTC -06:00
+GU;Guam;UTC +10:00
+GW;Guinea-Bissau;UTC
+GY;Guyana;UTC -04:00
+HK;Hong Kong;UTC +08:00
+HN;Honduras;UTC -06:00
+HR;Croatia;UTC +02:00
+HT;Haiti;UTC -04:00
+HU;Hungary;UTC +02:00
+ID;Indonesia;UTC +07:00
+IE;Ireland;UTC +01:00
+IL;Israel;UTC +03:00
+IM;Isle of Man;UTC +01:00
+IN;India;UTC +05:30
+IO;British Indian Ocean Territory;UTC +06:00
+IQ;Iraq;UTC +03:00
+IR;Iran;UTC +04:30
+IS;Iceland;UTC
+IT;Italy;UTC +02:00
+JE;Jersey;UTC +01:00
+JM;Jamaica;UTC -05:00
+JO;Jordan;UTC +03:00
+JP;Japan;UTC +09:00
+KE;Kenya;UTC +03:00
+KG;Kyrgyzstan;UTC +06:00
+KH;Cambodia;UTC +07:00
+KI;Kiribati;UTC +12:00
+KM;Comoros;UTC +03:00
+KN;Saint Kitts and Nevis;UTC -04:00
+KP;North Korea;UTC +09:00
+KR;South Korea;UTC +09:00
+KW;Kuwait;UTC +03:00
+KY;Cayman Islands;UTC -05:00
+KZ;Kazakhstan;UTC +05:00
+LA;Laos;UTC +07:00
+LB;Lebanon;UTC +03:00
+LC;Saint Lucia;UTC -04:00
+LI;Liechtenstein;UTC +02:00
+LK;Sri Lanka;UTC +05:30
+LR;Liberia;UTC
+LS;Lesotho;UTC +02:00
+LT;Lithuania;UTC +03:00
+LU;Luxembourg;UTC +02:00
+LV;Latvia;UTC +03:00
+LY;Libya;UTC +02:00
+MA;Morocco;UTC +01:00
+MC;Monaco;UTC +02:00
+MD;Moldova;UTC +03:00
+ME;Montenegro;UTC +02:00
+MF;Saint Martin;UTC -04:00
+MG;Madagascar;UTC +03:00
+MH;Marshall Islands;UTC +12:00
+MK;Macedonia;UTC +02:00
+ML;Mali;UTC
+MM;Myanmar;UTC +06:30
+MN;Mongolia;UTC +07:00
+MO;Macao;UTC +08:00
+MP;Northern Mariana Islands;UTC +10:00
+MQ;Martinique;UTC -04:00
+MR;Mauritania;UTC
+MS;Montserrat;UTC -04:00
+MT;Malta;UTC +02:00
+MU;Mauritius;UTC +04:00
+MV;Maldives;UTC +05:00
+MW;Malawi;UTC +02:00
+MX;Mexico;UTC -05:00
+MY;Malaysia;UTC +08:00
+MZ;Mozambique;UTC +02:00
+NA;Namibia;UTC +02:00
+NC;New Caledonia;UTC +11:00
+NE;Niger;UTC +01:00
+NF;Norfolk Island;UTC +11:00
+NG;Nigeria;UTC +01:00
+NI;Nicaragua;UTC -06:00
+NL;Netherlands;UTC +02:00
+NO;Norway;UTC +02:00
+NP;Nepal;UTC +05:45
+NR;Nauru;UTC +12:00
+NU;Niue;UTC -11:00
+NZ;New Zealand;UTC +12:00
+OM;Oman;UTC +04:00
+PA;Panama;UTC -05:00
+PE;Peru;UTC -05:00
+PF;French Polynesia;UTC -09:00
+PG;Papua New Guinea;UTC +10:00
+PH;Philippines;UTC +08:00
+PK;Pakistan;UTC +05:00
+PL;Poland;UTC +02:00
+PM;Saint Pierre and Miquelon;UTC -02:00
+PN;Pitcairn;UTC -08:00
+PR;Puerto Rico;UTC -04:00
+PS;Palestinian Territory;UTC +03:00
+PT;Portugal;UTC +01:00
+PW;Palau;UTC +09:00
+PY;Paraguay;UTC -04:00
+QA;Qatar;UTC +03:00
+RE;Reunion;UTC +04:00
+RO;Romania;UTC +03:00
+RS;Serbia;UTC +02:00
+RU;Russia;UTC +02:00
+RW;Rwanda;UTC +02:00
+SA;Saudi Arabia;UTC +03:00
+SB;Solomon Islands;UTC +11:00
+SC;Seychelles;UTC +04:00
+SD;Sudan;UTC +02:00
+SE;Sweden;UTC +02:00
+SG;Singapore;UTC +08:00
+SH;Saint Helena;UTC
+SI;Slovenia;UTC +02:00
+SJ;Svalbard and Jan Mayen;UTC +02:00
+SK;Slovakia;UTC +02:00
+SL;Sierra Leone;UTC
+SM;San Marino;UTC +02:00
+SN;Senegal;UTC
+SO;Somalia;UTC +03:00
+SR;Suriname;UTC -03:00
+SS;South Sudan;UTC +03:00
+ST;Sao Tome and Principe;UTC +01:00
+SV;El Salvador;UTC -06:00
+SX;Sint Maarten;UTC -04:00
+SY;Syria;UTC +03:00
+SZ;Swaziland;UTC +02:00
+TC;Turks and Caicos Islands;UTC -04:00
+TD;Chad;UTC +01:00
+TF;French Southern Territories;UTC +05:00
+TG;Togo;UTC
+TH;Thailand;UTC +07:00
+TJ;Tajikistan;UTC +05:00
+TK;Tokelau;UTC +13:00
+TL;East Timor;UTC +09:00
+TM;Turkmenistan;UTC +05:00
+TN;Tunisia;UTC +01:00
+TO;Tonga;UTC +13:00
+TR;Turkey;UTC +03:00
+TT;Trinidad and Tobago;UTC -04:00
+TV;Tuvalu;UTC +12:00
+TW;Taiwan;UTC +08:00
+TZ;Tanzania;UTC +03:00
+UA;Ukraine;UTC +03:00
+UG;Uganda;UTC +03:00
+UM;United States Minor Outlying Islands;UTC -11:00
+US;United States;UTC -04:00
+UY;Uruguay;UTC -03:00
+UZ;Uzbekistan;UTC +05:00
+VA;Vatican;UTC +02:00
+VC;Saint Vincent and the Grenadines;UTC -04:00
+VE;Venezuela;UTC -04:00
+VG;British Virgin Islands;UTC -04:00
+VI;U.S. Virgin Islands;UTC -04:00
+VN;Vietnam;UTC +07:00
+VU;Vanuatu;UTC +11:00
+WF;Wallis and Futuna;UTC +12:00
+WS;Samoa;UTC +13:00
+YE;Yemen;UTC +03:00
+YT;Mayotte;UTC +03:00
+ZA;South Africa;UTC +02:00
+ZM;Zambia;UTC +02:00
+ZW;Zimbabwe;UTC +02:00
+AQ;Antarctica;UTC -03:00
+AR;Argentina;UTC -03:00
+AU;Australia;UTC +10:00
+BR;Brazil;UTC -03:00
+CA;Canada;UTC -03:00
+CD;Democratic Republic of the Congo;UTC +02:00
+CL;Chile;UTC -04:00
+CN;China;UTC +08:00
+CY;Cyprus;UTC +03:00
+DE;Germany;UTC +02:00
+EC;Ecuador;UTC -06:00
+ES;Spain;UTC +02:00
+FM;Micronesia;UTC +11:00
+GL;Greenland;UTC
+ID;Indonesia;UTC +07:00
+KI;Kiribati;UTC +13:00
+KZ;Kazakhstan;UTC +05:00
+MH;Marshall Islands;UTC +12:00
+MN;Mongolia;UTC +08:00
+MX;Mexico;UTC -05:00
+MY;Malaysia;UTC +08:00
+NZ;New Zealand;UTC +12:45
+PF;French Polynesia;UTC -10:00
+PG;Papua New Guinea;UTC +11:00
+PS;Palestinian Territory;UTC +03:00
+PT;Portugal;UTC +01:00
+RU;Russia;UTC +03:00
+UA;Ukraine;UTC +03:00
+UM;United States Minor Outlying Islands;UTC +12:00
+US;United States;UTC -04:00
+UZ;Uzbekistan;UTC +05:00
