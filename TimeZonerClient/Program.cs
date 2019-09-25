@@ -16,45 +16,69 @@ namespace TimeZonerClient
             // Helper method to get GMT Universal time from an external web service
             double currentTime = timeZoner.GetGMTTime();
 
-            string input = Console.ReadLine();
-            bool countryCode = input.Length == 2;
-            
-            timeZoner.RunSoapAsync(currentTime, countryCode, input);
-            timeZoner.RunRest(currentTime, countryCode, input);
+            timeZoner.ReloadGUI();
 
-            Console.WriteLine();
-            Console.ReadKey();
+            bool isRunning = true;
+            string input = "";
+
+            do
+            {
+                if (isRunning)
+                    input = Console.ReadLine();
+
+                if (input.ToLower() == "exit")
+                {
+                    isRunning = false;
+                    break;
+                }
+
+                // Check if get ISO code
+                bool countryCode = input.Length == 2;
+
+                timeZoner.RunSoapAsync(currentTime, countryCode, input);
+                timeZoner.RunRest(currentTime, countryCode, input);
+                
+                Console.ReadKey();
+                Console.Clear();
+                timeZoner.ReloadGUI();
+
+            } while (isRunning);
+
         }
 
         public async void RunSoapAsync(double currentTime, bool countryCode, string country)
         {
             SOAPClient proxy = new SOAPClient();
+            // Trim and make into PascalCase
+            string countryName = country.Trim().Substring(0, 1).ToUpper() + country.Trim().Substring(1).ToLower();
             string countryTime;
 
             try
             {
                 if (countryCode)
-                    countryTime = await proxy.GetISOTimeAsync(country);
+                    countryTime = await proxy.GetISOTimeAsync(countryName);
                 else
-                    countryTime = await proxy.GetCountryTimeAsync(country);
+                    countryTime = await proxy.GetCountryTimeAsync(countryName);
 
-                Console.WriteLine("Country time SOAP: " + UnixTimeStampToDateTime(currentTime + Double.Parse(countryTime)));
+                Console.WriteLine("Time in " + countryName + " (SOAP): " + UnixTimeStampToDateTime(currentTime + Double.Parse(countryTime)));
             }
             catch (FaultException e)
             {
                 Console.WriteLine("SOAP: Country not found!");
             }
-            
+
         }
 
         public void RunRest(double currentTime, bool countryCode, string country)
         {
             HttpWebRequest request;
+            // Trim and make into PascalCase
+            string countryName = country.Trim().Substring(0,1).ToUpper() + country.Trim().Substring(1).ToLower();
 
             if (countryCode)
-                request = (HttpWebRequest)WebRequest.Create("https://localhost:44313/api/TimeZone/GetCountryISO/" + country);
+                request = (HttpWebRequest)WebRequest.Create("https://localhost:44313/api/TimeZone/GetCountryISO/" + countryName);
             else
-                request = (HttpWebRequest)WebRequest.Create("https://localhost:44313/api/TimeZone/GetCountryTime/" + country);
+                request = (HttpWebRequest)WebRequest.Create("https://localhost:44313/api/TimeZone/GetCountryTime/" + countryName);
 
             try
             {
@@ -66,7 +90,7 @@ namespace TimeZonerClient
 
                 streamReader.Close();
 
-                Console.WriteLine("Country time REST: " + UnixTimeStampToDateTime(currentTime + Double.Parse(jsonResponse)));
+                Console.WriteLine("Time in " + countryName + " (REST): " + UnixTimeStampToDateTime(currentTime + Double.Parse(jsonResponse)));
             }
             catch (WebException e)
             {
@@ -84,7 +108,7 @@ namespace TimeZonerClient
             string xmlString = streamReader.ReadToEnd();
 
             streamReader.Close();
-            
+
             XmlDocument xmlDoc = new XmlDocument(); // Create an XML document object
             xmlDoc.LoadXml(xmlString); // Load the XML document from the specified file
 
@@ -101,6 +125,20 @@ namespace TimeZonerClient
             dtDateTime = dtDateTime.AddSeconds(unixTimeStamp);
             return dtDateTime.ToLongTimeString();
         }
-        
+
+        private void ReloadGUI()
+        {
+            string title = @" ____  ____  __  __  ____    ____  _____  _  _  ____  ____ 
+(_  _)(_  _)(  \/  )( ___)  (_   )(  _  )( \( )( ___)(  _ \
+  )(   _)(_  )    (  )__)    / /_  )(_)(  )  (  )__)  )   /
+ (__) (____)(_/\/\_)(____)  (____)(_____)(_)\_)(____)(_)\_)
+                ";
+            Console.WriteLine(title);
+            Console.WriteLine("Welcome to the amazing Time Zoner!");
+            Console.WriteLine("\tType the name (or ISO) of a country to see what's the time there...");
+            Console.WriteLine("\t\t For closing the application just type - exit\n");
+            Console.Write("Country: ");
+        }
+
     }
 }
