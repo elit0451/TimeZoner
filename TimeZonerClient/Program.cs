@@ -135,8 +135,8 @@ namespace TimeZonerClient
                 ";
             Console.WriteLine(title);
             Console.WriteLine("Welcome to the amazing Time Zoner!");
-            Console.WriteLine("\tType the name (or ISO) of a country to see what's the time there...");
-            Console.WriteLine("\t\t For closing the application just type - exit\n");
+            Console.WriteLine("\tType in the name (or ISO) of a country to see what's the time there...");
+            Console.WriteLine("\t\t For closing the application just type in -> exit\n");
             Console.Write("Country: ");
         }
 
