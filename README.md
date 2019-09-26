@@ -20,7 +20,7 @@ The client application can be found in [TimeZonerClient](https://github.com/elit
 * Open the solution in Visual Studio :crystal_ball:
 * Right click the *TimeZonerRest* project and execute as **Debug** (start a new instance).
 * You would need to run the Client application next, so make sure you set it as a **default StartUp Project** and run it. 
-* The WCF will start automatically.
+* The WCF will start automatically. You can access the **WSDL** file through `http://localhost:49851/TimeZoner.svc?wsdl`
 
 ## Functionality
 The client application will present you with a menu with some instructions and allow you to enter input with a country name or country ISO code which will after be directed to the REST and SOAP web services, returning then the current time in the specified country.  
